@@ -36,7 +36,7 @@ const Homepage = () => {
   }, [location]);
 
   return (
-    <div className="container pt-5 m-auto text-center">
+    <div className="container max-[600]:h-screen pt-5 m-auto text-center">
       <div className="row-auto w-full justify-between flex">
         <div className="left w-96 max-[720px]:hidden">
           <img src={leftOne} alt="left-1" />
@@ -56,8 +56,8 @@ const Homepage = () => {
           <img src={leftOne} alt="left-1" />
         </div>
       </div>
-      <div className="flex mt-2 justify-center flex-wrap">
-        <div className="flex flex-col items-center">
+      <div className="flex mt-2 justify-center flex-wrap gap-1">
+        <div className="flex flex-col justify-center items-center">
           <WeatherCard
             title="City Name"
             value={weatherData ? weatherData?.location?.name : ""}
@@ -67,7 +67,7 @@ const Homepage = () => {
             value={weatherData ? weatherData?.current?.temp_c : ""}
           />
         </div>
-        <div>
+        <div className="flex flex-col items-center justify-center gap-1">
           <WeatherCard
             title="Humidity"
             value={weatherData ? weatherData?.current?.humidity : ""}
