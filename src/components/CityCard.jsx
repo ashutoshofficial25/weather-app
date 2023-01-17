@@ -2,12 +2,18 @@ import React, { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import cityImage from "../static/city.png";
 
-const CityCard = () => {
+const CityCard = ({ setLocation }) => {
   const { toggle, dark } = useContext(ThemeContext);
-  const [search, setSearch] = useState("");
   const [enabled, setEnabled] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search) setLocation(search);
+  };
+
   return (
-    <div className="card flex flex-col border w-fit m-auto border-gray-700 p-12 rounded-xl shadow-xl gap-4">
+    <div className="card flex flex-col border w-fit m-auto border-gray-700 p-12 rounded-xl  shadow-xl gap-4">
       <div className="relative flex flex-col items-center justify-center  overflow-hidden">
         <div className="flex">
           <label class="inline-flex relative items-center mr-5 cursor-pointer">
@@ -32,7 +38,7 @@ const CityCard = () => {
       </div>
       <div>
         <input
-          className="input border border-gray-500 px-5 my-3 py-2 text-green-500 font-bold rounded-md outline-none "
+          className="input border border-gray-500 px-5 my-3 py-2 text-green-500 font-bold rounded-md bg-slate-100 outline-none "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -41,6 +47,7 @@ const CityCard = () => {
         <button
           type="sumbit"
           className="border rounded-md border-gray-500 px-7 py-2 hover:bg-gray-700 hover:text-white duration-500"
+          onClick={(e) => handleSubmit(e)}
         >
           SUBMIT
         </button>

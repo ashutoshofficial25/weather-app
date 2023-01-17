@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 const themes = {
-  dark: "bg-black text-white duration-1000",
+  dark: "bg-slate-800 text-slate-400 duration-1000",
   light: "bg-white text-black duration-1000",
 };
 
