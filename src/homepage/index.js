@@ -54,20 +54,23 @@ const Homepage = () => {
         </div>
         <div className="flex mt-10 gap-5 flex-wrap">
           <div>
-            <WeatherCard title="City Name" value={weatherData.location.name} />
+            <WeatherCard
+              title="City Name"
+              value={weatherData ? weatherData?.location?.name : ""}
+            />
             <WeatherCard
               title="Temperature"
-              value={weatherData.current.temp_c}
+              value={weatherData ? weatherData?.current?.temp_c : ""}
             />
           </div>
           <div>
             <WeatherCard
               title="Humidity"
-              value={weatherData.current.humidity}
+              value={weatherData ? weatherData?.current?.humidity : ""}
             />
             <WeatherCard
               title="Feels like"
-              value={weatherData.current.feelslike_c}
+              value={weatherData ? weatherData?.current?.feelslike_c : ""}
             />
           </div>
         </div>
