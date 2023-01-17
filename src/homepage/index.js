@@ -23,12 +23,12 @@ const Homepage = () => {
         </div>
         <div className="flex mt-10 gap-5 flex-wrap">
           <div>
-            <WeatherCard />
-            <WeatherCard />
+            <WeatherCard title="City Name" />
+            <WeatherCard title="Temperature" />
           </div>
           <div>
-            <WeatherCard />
-            <WeatherCard />
+            <WeatherCard title="Humidity" />
+            <WeatherCard title="Description" />
           </div>
         </div>
         <div className="right w-96">
