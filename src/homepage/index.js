@@ -42,7 +42,15 @@ const Homepage = () => {
           <img src={leftOne} alt="left-1" />
         </div>
         <div className="center">
-          <CityCard setLocation={setLocation} />
+          <CityCard
+            location={location}
+            setLocation={setLocation}
+            condition={
+              weatherData
+                ? weatherData?.current?.condition
+                : { icon: "", text: "" }
+            }
+          />
         </div>
         <div className="right w-96">
           <img src={leftOne} alt="left-1" />

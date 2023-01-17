@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import cityImage from "../static/city.png";
 
-const CityCard = ({ setLocation }) => {
+const CityCard = ({ location = "", setLocation, condition }) => {
   const { toggle, dark } = useContext(ThemeContext);
   const [enabled, setEnabled] = useState(false);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(location);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,11 +38,12 @@ const CityCard = ({ setLocation }) => {
       </div>
       <div>
         <input
-          className="input border border-gray-500 px-5 my-3 py-2 text-green-500 font-bold rounded-md bg-slate-100 outline-none "
+          className="input border border-gray-500 px-5 mt-3 py-2 text-green-500 font-bold rounded-md bg-slate-100 outline-none "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
+
       <div>
         <button
           type="sumbit"
@@ -52,6 +53,12 @@ const CityCard = ({ setLocation }) => {
           SUBMIT
         </button>
       </div>
+      {condition && (
+        <div className="flex items-center justify-center">
+          <img className="w-10" src={condition.icon} alt="weather" />
+          <span className="text">{condition?.text}</span>
+        </div>
+      )}
     </div>
   );
 };
