@@ -38,10 +38,10 @@ const Homepage = () => {
   return (
     <div className="container pt-5 m-auto text-center">
       <div className="row-auto w-full justify-between flex">
-        <div className="left w-96">
+        <div className="left w-96 max-[720px]:hidden">
           <img src={leftOne} alt="left-1" />
         </div>
-        <div className="center">
+        <div className="center ">
           <CityCard
             location={location}
             setLocation={setLocation}
@@ -52,38 +52,30 @@ const Homepage = () => {
             }
           />
         </div>
-        <div className="right w-96">
+        <div className="right w-96 max-[720px]:hidden">
           <img src={leftOne} alt="left-1" />
         </div>
       </div>
-      <div className="row-auto w-full justify-between flex">
-        <div className="left w-96">
-          <img src={leftOne} alt="left-1" />
+      <div className="flex mt-2 justify-center gap-5 flex-wrap">
+        <div>
+          <WeatherCard
+            title="City Name"
+            value={weatherData ? weatherData?.location?.name : ""}
+          />
+          <WeatherCard
+            title="Temperature"
+            value={weatherData ? weatherData?.current?.temp_c : ""}
+          />
         </div>
-        <div className="flex mt-10 gap-5 flex-wrap">
-          <div>
-            <WeatherCard
-              title="City Name"
-              value={weatherData ? weatherData?.location?.name : ""}
-            />
-            <WeatherCard
-              title="Temperature"
-              value={weatherData ? weatherData?.current?.temp_c : ""}
-            />
-          </div>
-          <div>
-            <WeatherCard
-              title="Humidity"
-              value={weatherData ? weatherData?.current?.humidity : ""}
-            />
-            <WeatherCard
-              title="Feels like"
-              value={weatherData ? weatherData?.current?.feelslike_c : ""}
-            />
-          </div>
-        </div>
-        <div className="right w-96">
-          <img src={leftOne} alt="left-1" />
+        <div>
+          <WeatherCard
+            title="Humidity"
+            value={weatherData ? weatherData?.current?.humidity : ""}
+          />
+          <WeatherCard
+            title="Feels like"
+            value={weatherData ? weatherData?.current?.feelslike_c : ""}
+          />
         </div>
       </div>
     </div>
