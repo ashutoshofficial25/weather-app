@@ -56,8 +56,8 @@ const Homepage = () => {
           <img src={leftOne} alt="left-1" />
         </div>
       </div>
-      <div className="flex mt-2 justify-center gap-5 flex-wrap">
-        <div>
+      <div className="flex mt-2 justify-center flex-wrap">
+        <div className="flex flex-col items-center">
           <WeatherCard
             title="City Name"
             value={weatherData ? weatherData?.location?.name : ""}

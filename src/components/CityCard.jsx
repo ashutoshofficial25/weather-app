@@ -14,7 +14,7 @@ const CityCard = ({ location = "", setLocation, condition }) => {
   };
 
   return (
-    <div className="card flex flex-col border max-[720px]:mx-10 w-fit m-auto border-gray-700 p-12 rounded-xl  shadow-xl gap-4">
+    <div className="card flex flex-col border w-fit m-auto border-gray-700 max-[720px]:p-5 max-[720px]:mx-2 p-12 rounded-xl  shadow-xl gap-4">
       <div onClick={toggle} className="w-5">
         {dark ? (
           <img src={lightIcon} alt="light-icon" />
@@ -27,7 +27,7 @@ const CityCard = ({ location = "", setLocation, condition }) => {
       </div>
       <div>
         <input
-          className="input border border-gray-500 px-5 mt-3 py-2 text-slate-500 font-bold rounded-md bg-slate-100 outline-none "
+          className="input max-[720px]:p-1  border border-gray-500 px-5 mt-3 py-2 text-slate-500 max-[720px]:font-semibold  font-bold rounded-md bg-slate-100 outline-none "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -36,7 +36,7 @@ const CityCard = ({ location = "", setLocation, condition }) => {
       <div>
         <button
           type="sumbit"
-          className="border rounded-md border-gray-500 px-7 py-2 hover:bg-gray-700 hover:text-white duration-500"
+          className="border rounded-md border-gray-500 max-[720px]:px-3 max-[720px]:text-sm px-7 py-2 hover:bg-gray-700 hover:text-white duration-500"
           onClick={(e) => handleSubmit(e)}
         >
           SUBMIT
