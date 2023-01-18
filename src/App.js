@@ -6,7 +6,7 @@ import Homepage from "./homepage";
 function App() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className={`App ${theme} h-screen`}>
+    <div className={`App ${theme} min-[600px]:pb-28`}>
       <Homepage />
     </div>
   );
