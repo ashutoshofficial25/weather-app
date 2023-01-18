@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CityCard from "../components/CityCard";
 import WeatherCard from "../components/WeatherCard";
-import leftOne from "../static/left-1.png";
+import leftOne from "../static/one.png";
+import sunny from "../static/sunny.webp";
 
 const Homepage = () => {
   const [location, setLocation] = useState("Lucknow");
@@ -53,7 +54,7 @@ const Homepage = () => {
           />
         </div>
         <div className="right w-96 max-[720px]:hidden">
-          <img src={leftOne} alt="left-1" />
+          <img src={sunny} alt="left-1" />
         </div>
       </div>
       <div className="flex mt-2 justify-center flex-wrap gap-1">
