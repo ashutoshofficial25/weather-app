@@ -38,7 +38,7 @@ const Homepage = () => {
 
   return (
     <div className="container max-[600px]:h-screen pt-5 m-auto text-center">
-      <div className="row-auto w-full justify-between flex">
+      <div className="row-auto w-full max-[720px]:justify-center justify-between flex">
         <div className="left w-96 max-[720px]:hidden">
           <img src={leftOne} alt="left-1" />
         </div>
